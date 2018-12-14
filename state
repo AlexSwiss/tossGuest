@@ -1,0 +1,21 @@
+    state = {
+        guests: [
+            {id: uuid(), name: 'Alexander Ikeh', email: 'alexyikeh@gmail,com', phone: '08182432388'},
+            {id: uuid(), name: 'Sarah Peters', email: 'sarah.peters@gmail,com', phone: '08135354388'},
+            {id: uuid(), name: 'Catherine James', email: 'cath93@gmail,com', phone: '07086532679'},
+            {id: uuid(), name: 'Emmson Gabriel', email: 'emmsongab@gmail,com', phone: '090756483982'},
+            {id: uuid(), name: 'Mohammed Nabieu', email: 'mohammednab@gmail,com', phone: '23298573756'}            
+        ]
+}
+
+                <ListGroup>
+                    <TransitionGroup className="guests-list">
+                        {guests.map(({id, name, email, phone}) => (
+                            <CSSTransition key={id} timeout={500} classNames="fade">
+                                <ListGroupItem>
+                                    {name} | {email} | {phone}
+                                </ListGroupItem>
+                            </CSSTransition>
+                        ))}
+                    </TransitionGroup>
+                </ListGroup>
